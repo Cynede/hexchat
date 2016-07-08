@@ -1126,15 +1126,6 @@ main (int argc, char *argv[])
 		fe_message (buf, FE_MSG_ERROR);
 	}
 
-#ifndef WIN32
-#ifndef __EMX__
-	/* OS/2 uses UID 0 all the time */
-	if (getuid () == 0)
-		fe_message (_("* Running IRC as root is stupid! You should\n"
-			      "  create a User Account and use that to login.\n"), FE_MSG_WARN|FE_MSG_WAIT);
-#endif
-#endif /* !WIN32 */
-
 	xchat_init ();
 
 	fe_main ();
